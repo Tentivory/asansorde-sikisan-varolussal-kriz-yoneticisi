@@ -68,7 +68,7 @@ class KrizRaporu:
         print(cizgi)
 
 
-def yavas_yaz(metin: str, gecikme: float = 0.02) -> None:
+def yavas_yaz(metin: str, gecikme: float = 0.03) -> None:
     for harf in metin:
         sys.stdout.write(harf)
         sys.stdout.flush()
@@ -76,11 +76,11 @@ def yavas_yaz(metin: str, gecikme: float = 0.02) -> None:
     print()
 
 
-def kriz_baslat(sure: int = 4) -> KrizRaporu:
+def kriz_baslat(sure: int = 6) -> KrizRaporu:
     yavas_yaz("Asansor durdu. Bu bir ariza degil, bir firsattir... hayir, arizadir.")
     for i in range(sure, 0, -1):
         print(f"  varolus sayaci: {i}")
-        time.sleep(0.4)
+        time.sleep(0.55)
     rapor = KrizRaporu(
         kat=random.choice(KATLAR),
         teselli=random.choice(TESELLILER),
@@ -92,7 +92,7 @@ def kriz_baslat(sure: int = 4) -> KrizRaporu:
 
 
 def main() -> int:
-    print("ASANSORDE SIKISAN VAROLUSSAL KRIZ YONETICISI v0.0.1")
+    print("ASANSORDE SIKISAN VAROLUSSAL KRIZ YONETICISI v0.0.2-yavas")
     print("Python 3 yeter. Asansor tecrubesi sart degil, kacinilmaz.")
     print()
     kriz_baslat()
